@@ -3,7 +3,6 @@ import React from "react";
 const VideoCards = ({ info }) => {
   const { snippet, statistics } = info;
   const { channelTitle, title, thumbnails } = snippet;
-  console.log(info);
 
   return (
     <div className="p-2 m-2 w-72 shadow-lg">
@@ -12,7 +11,6 @@ const VideoCards = ({ info }) => {
       <ul>
         <li className="font-bold py-1 line-clamp-2 ">{title}</li>
         <li className="line-clamp-1">{channelTitle}</li>
-        <li>View Count: {statistics.viewCount}</li>
       </ul>
     </div>
   );
