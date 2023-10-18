@@ -48,17 +48,17 @@ const Head = () => {
     dispatch(toggleMenu());
   };
 
-  const getVideosByQuery = async () => {
-    try {
-      const response = await fetch(
-        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=100&key=${GOOGLE_API_KEY}&q=${searchQuery}`
-      );
-      const data = await response.json();
-      dispatch(setVideos(data.items));
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
+  // const getVideosByQuery = async () => {
+  //   try {
+  //     const response = await fetch(
+  //       `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=100&key=${GOOGLE_API_KEY}&q=${searchQuery}`
+  //     );
+  //     const data = await response.json();
+  //     dispatch(setVideos(data.items));
+  //   } catch (error) {
+  //     console.error("Error fetching data:", error);
+  //   }
+  // };
 
   const handleSuggestClick = (s) => {
     setShowSuggestions(false);
@@ -103,14 +103,14 @@ const Head = () => {
           />
           <button
             className=" p-2 mt-1 border border-gray-400 rounded-r-full"
-            onClick={getVideosByQuery}
+            // onClick={getVideosByQuery}
           >
             Search
           </button>
         </div>
         {/* absolute left-[40px] right-0 top-[71px] bg-white py-2 px-2 w-[31rem] shadow-lg rounded-lg border border-gray-100 */}
         {showSuggestions && (
-          <div className="absolute bg-white w-1/3">
+          <div className="absolute bg-white w-1/3 cursor-pointer">
             <ul>
               {suggestions.map((s) => (
                 <li
