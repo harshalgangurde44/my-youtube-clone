@@ -29,7 +29,7 @@ const VideoContainer = () => {
   const getVideosByQuery = async (checkQuery) => {
     try {
       const response = await fetch(
-        `https://cors-anywhere.herokuapp.com/https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=100&key=${GOOGLE_API_KEY}&q=${checkQuery}`
+        `https://harshal-gangurde-cors-anywhere.onrender.com/https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=100&key=${GOOGLE_API_KEY}&q=${checkQuery}`
       );
       const data = await response.json();
       dispatch(setVideos(data.items));
